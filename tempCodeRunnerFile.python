@@ -1,0 +1,12 @@
+import requests
+
+headers = {
+    "User-Agent": "Vedant-App"
+}
+
+response = requests.get(
+    "https://httpbin.org/headers",
+    headers=headers
+)
+
+print(response.json())

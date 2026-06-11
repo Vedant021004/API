@@ -1,0 +1,62 @@
+import requests
+import pandas as pd
+response = requests.get("https://api.github.com")
+# print(response.status_code)
+# print(dir(response))
+# print(response.text)
+# print("hello" , response.json)
+# print("hello",response.json())
+set = pd.DataFrame(response.json())
+
+
+
+import requests
+
+response = requests.get("https://api.github.com")
+
+print(response.status_code)
+print(response.text)
+
+
+import requests
+
+student = {
+    "name": "Vedant",
+    "age": 20
+}
+
+response = requests.post(
+    "https://example.com",
+    json=student
+)
+
+
+import requests
+
+my_headers = {
+    "User-Agent": "Vedant-App"
+}
+
+response = requests.get(
+    "https://api.github.com",
+    headers=my_headers
+)
+
+print(response.status_code)
+
+
+
+import requests
+
+headers = {
+    "User-Agent": "Vedant-App"
+}
+
+response = requests.get(
+    "https://httpbin.org/headers",
+    headers=headers
+)
+
+print(response.json())
+
+
