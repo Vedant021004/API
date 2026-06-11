@@ -1,9 +1,12 @@
-import json
+import logging
 
-data = {
-    "name": "Vedant"
-}
+logging.basicConfig(
+    filename="app.log",
+    level=logging.INFO
+)
 
-json_data = json.dumps(data)
+try:
+    x = 10 / 0
 
-print(json_data)
+except Exception as e:
+    logging.error(e)

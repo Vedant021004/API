@@ -1,0 +1,4 @@
+INFO:root:Program started
+WARNING:root:Low memory
+ERROR:root:API failed
+ERROR:root:division by zero

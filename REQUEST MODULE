@@ -60,3 +60,50 @@ response = requests.get(
 print(response.json())
 
 
+
+
+
+
+import requests
+
+username = input("Enter username: ")
+
+response = requests.get(
+    f"https://api.github.com/users/{username}"
+)
+
+data = response.json()
+
+
+
+
+
+
+import requests
+
+params = {
+    "name": "Vedant",
+    "course": "Python"
+}
+
+response = requests.get(
+    "https://httpbin.org/get",
+    params=params
+)
+
+print(response.json())
+
+
+import requests
+
+try:
+    response = requests.get(
+        "https://api.github.com"
+    )
+
+    response.raise_for_status()
+
+    print("Success")
+
+except Exception as e:
+    print("Error:", e)
