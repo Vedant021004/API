@@ -1,12 +1,17 @@
 import logging
+import requests
 
 logging.basicConfig(
     filename="app.log",
     level=logging.INFO
 )
 
-try:
-    x = 10 / 0
+logging.info("Calling GitHub API")
 
-except Exception as e:
-    logging.error(e)
+response = requests.get(
+    "https://api.github.com"
+)
+
+logging.info(response.status_code)
+
+print("Done")
