@@ -1,6 +1,4 @@
-If you're creating a **professional GitHub README or study notes**, write it like documentation, not like short interview notes.
-
----
+-
 
 # Python Libraries for Backend Development, Automation, DevOps, and Machine Learning
 
