@@ -1,17 +1,13 @@
-import logging
 import requests
+URL = "https://catfact.ninja/fact"
 
-logging.basicConfig(
-    filename="app.log",
-    level=logging.INFO
-)
-
-logging.info("Calling GitHub API")
-
-response = requests.get(
-    "https://api.github.com"
-)
-
-logging.info(response.status_code)
-
-print("Done")
+for i in range(10):
+    try:
+       response = requests.get(URL, timeout = 0.1)    
+       print(response.text)
+       print(response.status_code)
+       break
+    except Exception as e:
+        print("Timeout error")
+else:
+    print("All retries are Failled") 
