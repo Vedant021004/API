@@ -1,26 +1,11 @@
-import config
 import requests
+import config
+import pandas as pd
 
-URL = config.users()
-print(URL)
+print(config.users())
+response = requests.get(config.users())
+data = response.json()
+print(type(data))
 
-
-headers = {
-    "Authorization": "Bearer 25a9f1cfc8ebc5671f3f2e4ab2789da334ca22acd74b4d6b8f36b62e18a1ffa2"
-}
-
-name = input("please enter your name : ")
-email = input("please enter your email : ")
-status = input("please enter your status : ")
-gender = input("please enter your gender : ")
-
-data = dict()
-data['name'] = name
-data['email'] = email
-data['status'] = status
-data['gender'] = gender
-
-post = requests.post(URL,headers = headers, data = data)
-print(post)
-print(post.status_code)
-print(post.json())
+arr = pd.DataFrame(data)
+print(arr)
